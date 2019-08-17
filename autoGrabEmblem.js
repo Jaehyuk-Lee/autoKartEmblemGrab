@@ -2,12 +2,10 @@
 // 앰블럼이 나오는 시간이 달라지거나
 // 앰블럼 부분 코드가 달라지면 작동하지 않을 수 있음.
 var em1 = setInterval(()=>{
-    var now = new Date();
-    var hour = now.getHours();
-    var minute = now.getMinutes();
-    if((hour == 18 && minute == 11 || minute == 26 || minute == 41) || hour == 19 && minute == 1)
-        emblemEventApply(document.querySelector('a[data-n1emblem]'));
-    console.log(hour + "시 " + minute + "분");
+    emblemEventApply(document.querySelector('a[data-n1emblem]'));
+    setTimeout(() => {
+        layerClose('layerAlert');
+    }, 10);
 }, 33 * 1000);
 
 function emblemEventApply(target) {
